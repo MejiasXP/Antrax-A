@@ -15,13 +15,12 @@ clear
 
 function menu() {
 echo ""
-echo -e "\e[32m=========================\e[0m"
+echo -e "\e[31m=========================\e[0m"
 echo ""
 echo -e "Objetivo \e[32m$target\e[0m"
 echo ""
 echo -e "Puerto \e[32m$port\e[0m"
 echo ""
-echo -e "\e[32m=========================\e[0m"
 echo ""
 echo "Tipo de analisis"
 echo "1. Escaneo basico"
