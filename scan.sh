@@ -23,13 +23,13 @@ echo -e "Puerto \e[32m$port\e[0m"
 echo ""
 echo -e "\e[32m=========================\e[0m"
 echo ""
-echo "Tipo de análisis"
-echo "1. Escaneo básico"
+echo "Tipo de analisis"
+echo "1. Escaneo basico"
 echo "2. Escaneo completo"
 echo "3. Vulnerabilidades"
 echo "4. XSS"
 echo ""
-echo -n "Opción: "
+echo -n "Opcion: "
 read opt
 
 if [ $opt == 1 ]
@@ -56,7 +56,7 @@ exit
 elif [ $opt == 3 ]
 then
 echo -e "\e[32m=========================\e[0m"                
-nmap -sV --script vulnerscan-master/vulscan.nse $target
+nmap -sV --script vulscan-master/vulscan.nse $target
 menu
 exit                
                 
