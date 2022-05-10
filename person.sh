@@ -41,7 +41,7 @@ read opt
 if [ $opt == 1 ]
 then
 echo -e "\e[32m=========================\e[0m"        
-cd sherlock
+cd utilidades/sherlock
 python3 sherlock $user
 cd -
 menu
