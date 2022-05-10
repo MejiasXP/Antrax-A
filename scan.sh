@@ -26,8 +26,8 @@ echo ""
 echo "Tipo de analisis"
 echo "1. Escaneo basico"
 echo "2. Escaneo completo"
-echo "3. Vulnerabilidades"
-echo "4. XSS"
+echo "3. Detección Sistema"
+echo "4. Vulnerabilidades"
 echo ""
 echo -n "Opcion: "
 read opt
@@ -46,17 +46,17 @@ sudo nmap -sS $target
 menu            
 exit
 
-elif [ $opt == 3 ]
+elif [ $opt == 4 ]
 then
 echo -e "\e[32m=========================\e[0m"                
-nmap -sV --script vulnerscan-master/vulscan.nse $target
+nmap -sV --script vulscan-master/vulscan.nse $target
 menu
 exit
 
 elif [ $opt == 3 ]
 then
 echo -e "\e[32m=========================\e[0m"                
-nmap -sV --script vulscan-master/vulscan.nse $target
+sudo nmap -O $target
 menu
 exit                
                 
