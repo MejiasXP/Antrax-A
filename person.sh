@@ -13,6 +13,9 @@ read name
 echo ""
 echo -n "Apellidos: "
 read aname
+echo ""
+echo -n "Correo: "
+read mail
 
 
 clear
@@ -40,7 +43,8 @@ read opt
 
 if [ $opt == 1 ]
 then
-echo -e "\e[32m=========================\e[0m"        
+echo -e "\e[32m=========================\e[0m"      
+echo ""
 cd utilidades/sherlock
 python3 sherlock $user
 cd -
