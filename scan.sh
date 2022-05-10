@@ -15,7 +15,7 @@ clear
 
 function menu() {
 echo ""
-echo -e "\e[31m=========================\e[0m"
+echo -e "\e[32m=========================\e[0m"
 echo ""
 echo -e "Objetivo \e[32m$target\e[0m"
 echo ""
@@ -33,28 +33,28 @@ read opt
 
 if [ $opt == 1 ]
 then
-echo -e "\e[32m=========================\e[0m"        
+echo -e "\e[31m=========================\e[0m"        
 nmap $target
 menu
 echo "a"
 
 elif [ $opt == 2 ]
 then
-echo -e "\e[32m=========================\e[0m"            
+echo -e "\e[31m=========================\e[0m"            
 sudo nmap -sS $target
 menu            
 exit
 
 elif [ $opt == 4 ]
 then
-echo -e "\e[32m=========================\e[0m"                
+echo -e "\e[31m=========================\e[0m"                
 nmap -sV --script vulscan-master/vulscan.nse $target
 menu
 exit
 
 elif [ $opt == 3 ]
 then
-echo -e "\e[32m=========================\e[0m"                
+echo -e "\e[31m=========================\e[0m"                
 sudo nmap -O $target
 menu
 exit                
