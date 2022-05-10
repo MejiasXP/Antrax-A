@@ -10,7 +10,7 @@ read target
 echo ""
 echo -n "Puerto: "
 read port
-
+clear
 
 
 function menu() {
@@ -26,7 +26,7 @@ echo ""
 echo "Tipo de analisis"
 echo "1. Escaneo basico"
 echo "2. Escaneo completo"
-echo "3. Detección Sistema"
+echo "3. Deteccion Sistema"
 echo "4. Vulnerabilidades"
 echo ""
 echo -n "Opcion: "
