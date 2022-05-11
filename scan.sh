@@ -10,6 +10,7 @@ read target
 echo ""
 echo -n "Puerto: "
 read port
+
 clear
 
 
@@ -27,38 +28,50 @@ echo "1. Escaneo basico"
 echo "2. Escaneo completo"
 echo "3. Deteccion Sistema"
 echo "4. Vulnerabilidades"
+echo "5. Añadir comandos"
 echo ""
 echo -n "Opcion: "
 read opt
 
+
+
+        
 if [ $opt == 1 ]
 then
-echo -e "\e[31m=========================\e[0m"        
-nmap $target
+echo -e "\e[32m=========================\e[0m"        
+nmap $comm $target
 menu
 echo "a"
 
 elif [ $opt == 2 ]
 then
-echo -e "\e[31m=========================\e[0m"            
-sudo nmap -sS $target
+echo -e "\e[32m=========================\e[0m"            
+sudo nmap -sS $comm $target
 menu            
 exit
 
 elif [ $opt == 4 ]
 then
-echo -e "\e[31m=========================\e[0m"                
-nmap -sV --script vulscan-master/vulscan.nse $target
+echo -e "\e[32m=========================\e[0m"                
+nmap $comm -sV --script vulscan-master/vulscan.nse $target
 menu
 exit
 
 elif [ $opt == 3 ]
 then
-echo -e "\e[31m=========================\e[0m"                
-sudo nmap -O $target
+echo -e "\e[32m=========================\e[0m"                
+sudo nmap $comm -O $target
 menu
 exit                
-                
+
+elif [ $opt == 5 ]
+then
+echo -n "Command: "
+read comm                        
+menu
+exit                    
+                    
 fi 
 }
 menu
+
