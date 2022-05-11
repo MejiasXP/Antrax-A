@@ -23,7 +23,7 @@ echo ""
 echo -e "\e[32m*\e[0m Puerto: \e[32m$port\e[0m"
 echo ""
 echo ""
-echo "\e[31m*\e[0m Tipo de analisis"
+echo -e "\e[31m*\e[0m Tipo de analisis"
 echo ""
 echo " 1. Escaneo basico"
 echo " 2. Escaneo completo"
@@ -37,22 +37,20 @@ echo -e "\e[32m$comm\e[0m"
 echo ""
 echo -n "Opcion: "
 read opt
-
-
-
         
 if [ $opt == 1 ]
 then
 echo -e "\e[32m=========================\e[0m"        
 nmap $comm $target
 menu
-echo "a"
+
+
 
 elif [ $opt == 2 ]
 then
 echo -e "\e[32m=========================\e[0m"            
 sudo nmap -sS $comm $target
-menu            
+menu              
 exit
 
 elif [ $opt == 4 ]
@@ -76,12 +74,11 @@ read comm
 menu
 exit
                         
-elif [ $opt == 5 ]
+elif [ $opt == 99 ]
 then
-bash a.sh
-exit                        
-                    
-fi 
-}
-menu
-
+bash a.sh                        
+exit                            
+fi
+menu                        
+                    }                   
+menu                 
