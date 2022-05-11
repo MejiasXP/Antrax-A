@@ -18,17 +18,22 @@ function menu() {
 echo ""
 echo -e "\e[32m=========================\e[0m"
 echo ""
-echo -e "Objetivo \e[32m$target\e[0m"
+echo -e "\e[32m*\e[0m Objetivo: \e[32m$target\e[0m"
 echo ""
-echo -e "Puerto \e[32m$port\e[0m"
+echo -e "\e[32m*\e[0m Puerto: \e[32m$port\e[0m"
 echo ""
 echo ""
-echo "Tipo de analisis"
-echo "1. Escaneo basico"
-echo "2. Escaneo completo"
-echo "3. Deteccion Sistema"
-echo "4. Vulnerabilidades"
-echo "5. Añadir comandos"
+echo "\e[31m*\e[0m Tipo de analisis"
+echo ""
+echo " 1. Escaneo basico"
+echo " 2. Escaneo completo"
+echo " 3. Deteccion Sistema"
+echo " 4. Vulnerabilidades"
+echo " 5. Añadir comandos"
+echo ""
+echo " 99. Volver"
+echo ""
+echo -e "\e[32m$comm\e[0m"
 echo ""
 echo -n "Opcion: "
 read opt
@@ -69,7 +74,12 @@ then
 echo -n "Command: "
 read comm                        
 menu
-exit                    
+exit
+                        
+elif [ $opt == 5 ]
+then
+bash a.sh
+exit                        
                     
 fi 
 }
