@@ -8,11 +8,11 @@ echo ""
 echo -n "Usuario: "
 read user
 echo ""
-echo -n "Nombre: "
+echo -n "Nombre Completo: "
 read name
 echo ""
-echo -n "Apellidos: "
-read aname
+echo -n "Telefono: "
+read phone
 echo ""
 echo -n "Correo: "
 read mail
@@ -25,29 +25,32 @@ function menu() {
 echo ""
 echo -e "\e[32m=========================\e[0m"
 echo ""
-echo -e "Usuario \e[32m$user\e[0m"
+echo -e "\e[32m*\e[0m Usuario: \e[32m$user\e[0m"
 echo ""
-echo -e "Nombre \e[32m$name\e[0m"
+echo -e "\e[32m*\e[0m Nombre: \e[32m$name\e[0m"
 echo ""
-echo -e "Apellidos \e[32m$aname\e[0m"
-echo ""    
+echo -e "\e[32m*\e[0m Telefono: \e[32m$phone\e[0m"    
 echo ""
-echo "Tipo de analisis"
-echo "1. Redes Sociales"
-echo "2. Correo"
-echo "3. Teléfono"
-echo "4. Contraseñas"
+echo -e "\e[32m*\e[0m Correo: \e[32m$mail\e[0m"    
+echo ""      
+echo -e "\e[31m*\e[0m Tipo de analisis"
+echo "  1. Cuentas redes sociales"
+echo "  2. Correo"
+echo "  3. Telefono"
+echo "  4. Contraseñas robadas"
+echo "  5. Ubicacion"
+echo "  6. INFECTAR"
+echo "  7. POST INFECCION"
 echo ""
 echo -n "Opcion: "
 read opt
 
 if [ $opt == 1 ]
 then
-echo -e "\e[32m=========================\e[0m"      
-echo ""
-cd utilidades/sherlock
+echo -e "\e[32m=========================\e[0m"        
+cd
+cd sherlock
 python3 sherlock $user
-cd -
 menu
 echo "a"
 
@@ -70,8 +73,10 @@ then
 echo -e "\e[32m=========================\e[0m"                
 sudo nmap -O $target
 menu
-exit                
-                
+exit                               
 fi 
-}
+                
+            }
 menu
+            
+
